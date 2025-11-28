@@ -1,0 +1,5 @@
+# Eletrica
+# OBJETIVO:
+# INTEGRANTE: Alicia Everz
+# COMO EXECUTAR:
+# MÓDULO EXTRA:
