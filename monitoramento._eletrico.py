@@ -2,9 +2,10 @@
 !git add .
 !git commit -m "Aula 1 - estrutura inicial"
 !git push
-# modulo extra, linhas 123-140
+# modulo extra, linhas 133-148
 
-#======== Lista de Listas ============
+
+# 1) ======== Lista de Listas ============
 # - lista simples guarda valores, mas uma de listas pode guardas várias informações sobre o mesmo elemento
 # - Cada circuito presente nesta lista de circuitos possuem repesctivamente: nome, tipo, tensão, corrente, fator de potência, frequência, data de medição.
 circuitos = [
@@ -22,7 +23,8 @@ for c in circuitos:
     print(c)
 
 
-#============ Dicionário ============
+
+# 2) ============ Dicionário ============
 # - guarda informações no formato chave : valor
 # - Será usado para guardar limites elétricos por tipo de circuito que estão na lista de listas anteriormente
 limites = {
@@ -51,7 +53,8 @@ for c in circuitos:
     print(c[0], "está dentro da faixa?", dentro_da_faixa(c))
 
 
-# ========== Strings ================
+
+# 3) ========== Strings ================
 # - muitas vezes as medições chegam em texto, aqui as informações serão separadas e atualizarão a lista
 def registrar_medicao(linha):
     partes = linha.split(";")
@@ -80,7 +83,8 @@ for c in circuitos:
     print(c)
 
 
-# ========== Arquivo ============
+
+# 4) ========== Arquivo ============
 # - para não perder os dados, pode salvar em arquivos
 # - Salvar circuito e verificar quem está fora de faixa
 def salvar_circuitos(nome_arquivo="circuitos.txt"):
@@ -102,7 +106,9 @@ def gerar_relatorio_nao_conforme(nome_arquivo="relatorio_nao_conforme.txt"):
 salvar_circuitos()
 gerar_relatorio_nao_conforme()
 
-# ======== Análises Elétricos ============
+
+
+# 5) ======== Análises Elétricos ============
 # - identificar fatores de menor potência
 def resumo_eletrico():
     menor_fp = min(circuitos, key=lambda x: x[4])
@@ -121,7 +127,8 @@ def resumo_eletrico():
 resumo_eletrico()
 
 
-# ================ Módulo Extra - UPS ==============
+
+# 6) ================ Módulo Extra - UPS ==============
 # = Registro de UPS, o usuário precisa inserir o valor da tensão (V) de entrada e saída, quando a entrada é maior que 200 V, aparece no arquivo "UPS acionada", em qualquer entrada e saída inserida é inserida no arquivo um novo registro
 def modulo_extra():
     print("Monitoramento de UPS")
@@ -141,7 +148,8 @@ def modulo_extra():
 modulo_extra()
 
 
-# ================ Menu Final ==============
+
+# 7) ================ Menu Final ==============
 # - Serve para rodar o sistema completo
 def main():
     print("=== Sistema de Monitoramento Elétrico ===")
